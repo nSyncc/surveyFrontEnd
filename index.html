@@ -33,7 +33,7 @@
 	                            <p>Dashboard</p>
 	                        </a>
 	                    </li>
-	                    <li>
+	                   <li>
 	                        <a class="nav-link" href="./user.html">
 	                            <i class="nc-icon nc-circle-09"></i>
 	                            <p>User Profile</p>
@@ -126,17 +126,7 @@
   <h4>Select a question for survey.</h4>
   <div class="form-group">
     <label for="sel1">Questions:</label>
-    <select class="form-control" id="sel1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-    </select>
-  </div>
-  <h4>Select a question for survey.</h4>
-  <div class="form-group">
-    <label for="sel1">Questionss:</label>
-    <select class="form-control" id="sel1">
+    <select class="form-control" id="sel2">
       <option>1</option>
       <option>2</option>
       <option>3</option>
@@ -146,7 +136,7 @@
   <h4>Select a question for survey.</h4>
   <div class="form-group">
     <label for="sel1">Questions:</label>
-    <select class="form-control" id="sel1">
+    <select class="form-control" id="sel3">
       <option>1</option>
       <option>2</option>
       <option>3</option>
@@ -156,7 +146,17 @@
   <h4>Select a question for survey.</h4>
   <div class="form-group">
     <label for="sel1">Questions:</label>
-    <select class="form-control" id="sel1">
+    <select class="form-control" id="sel4">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+  </div>
+  <h4>Select a question for survey.</h4>
+  <div class="form-group">
+    <label for="sel1">Questions:</label>
+    <select class="form-control" id="sel5">
       <option>1</option>
       <option>2</option>
       <option>3</option>
@@ -164,12 +164,32 @@
     </select>
   </div>
   <br>
-    <button type="submit" class="btn btn-default">Create</button>
+    <i class="glyphicon glyphicon-pencil"></i><button type="submit" class="btn btn-default">Create</button>
   </div>
 </div>
 </div>
 </form>
 </div>
+
+<div class="container-form">
+<form>
+
+<div id="survey-submit-message">
+<div class="form-group">
+<div class="choose-survey">
+  <form id="surveys-index" class="border">
+    <fieldset>
+      <legend>Please choose a survey to complete</legend><i class="glyphicon glyphicon-search"></i>
+        <input type="submit" value="Search surveys">
+    </fieldset>
+  </form>
+  <div id="content">surveys listed</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+
 <div class="container-form">
 <form>
   <div id="survey-submit-message">
@@ -187,6 +207,7 @@
     <button type="button" class="btn btn-default">5</button>
     </div> -->
     <form id="question1">
+      <!--#sel1 -->
     <label class="radio-inline">
       <input type="radio" name="optradio1">1
     </label>
@@ -214,6 +235,7 @@
     <button type="button" class="btn btn-default">5</button>
   </div> -->
   <form id="question2">
+    <!--#sel2 -->
   <label class="radio-inline">
     <input type="radio" name="optradio1">1
   </label>
@@ -241,6 +263,7 @@
     <button type="button" class="btn btn-default">5</button>
   </div> -->
   <form id="question3">
+    <!--#sel3 -->
   <label class="radio-inline">
     <input type="radio" name="optradio1">1
   </label>
@@ -268,6 +291,7 @@
     <button type="button" class="btn btn-default">5</button>
   </div> -->
   <form id="question4">
+    <!--#sel4 -->
   <label class="radio-inline">
     <input type="radio" name="optradio1">1
   </label>
@@ -296,6 +320,7 @@
   </div>
   <div><br> -->
   <form id="question5">
+    <!--#sel5 -->
   <label class="radio-inline">
     <input type="radio" name="optradio1">1
   </label>
@@ -311,14 +336,15 @@
   <label class="radio-inline">
     <input type="radio" name="optradio5">5
   </label><br><br>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <i class="glyphicon glyphicon-envelope"></i><button type="submit" class="btn btn-default">Submit</button>
   </div>
 </form>
 </div>
 </form>
 </div>
 </div>
-<div id="content"></div>
+
+
 
 		            <div class="content">
 	                <div class="container-fluid">

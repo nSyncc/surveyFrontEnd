@@ -18,9 +18,26 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   border-color: grayscale;
   padding: 25px;
   box-shadow: 10px 10px 8px #888888;
+  background-color: lightblue;
 }
 
 .create-survey h6 {
+  text-align: left;
+  color: gray;
+}
+
+.choose-survey {
+  text-align: center;
+  border-radius: 10px;
+  border-style: ridge;
+  border-width: 10px;
+  border-color: grayscale;
+  padding: 25px;
+  box-shadow: 10px 10px 8px #888888;
+  background-color: lightblue;
+}
+
+.choose-survey h6 {
   text-align: left;
   color: gray;
 }
@@ -33,8 +50,22 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   border-color: grayscale;
   padding: 25px;
   box-shadow: 10px 10px 8px #888888;
+  background-color: lightblue;
 }
 
+i.glyphicon-pencil {
+    font-size: 1.8em;
+    padding-right: 5px;
+}
+
+i.glyphicon-search {
+    font-size: 1.8em;
+}
+
+i.glyphicon-envelope {
+    font-size: 1.8em;
+    padding-right: 5px;
+}
 .survey h6 {
   text-align: left;
   color: gray;
