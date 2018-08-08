@@ -8,4 +8,6 @@
 
 $(() => {
   // your JS code goes here
+   $('#create-survey').on('submit', events.onCreateSurvey)
+   $('#survey-response').on('submit', events.onSubmitResponse)
 })

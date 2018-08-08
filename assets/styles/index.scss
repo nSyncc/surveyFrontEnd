@@ -10,6 +10,21 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   height: calc(100vh);
 }
 
+.create-survey {
+  text-align: center;
+  border-radius: 10px;
+  border-style: ridge;
+  border-width: 10px;
+  border-color: grayscale;
+  padding: 25px;
+  box-shadow: 10px 10px 8px #888888;
+}
+
+.create-survey h6 {
+  text-align: left;
+  color: gray;
+}
+
 .survey {
   text-align: center;
   border-radius: 10px;
@@ -23,6 +38,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .survey h6 {
   text-align: left;
   color: gray;
+}
+
+.container-survey {
+  padding: 20px 75px;
 }
 .container-form {
   padding: 20px 75px;
