@@ -12,20 +12,10 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-
 			<div class="wrapper">
 	        <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
-	            <!--
-	        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
-
-	        Tip 2: you can also add an image using data-image tag
-	    -->
-	            <div class="sidebar-wrapper">
-	                <div class="logo">
-	                    <a href="http://www.creative-tim.com" class="simple-text">
-	                        Survey Tracker
-	                    </a>
-	                </div>
+	 	         <div class="sidebar-wrapper">
+	               <div class="logo">Survey Tracker</div>
 	                <ul class="nav">
 	                    <li class="nav-item active">
 	                        <a class="nav-link" href="dashboard.html">
@@ -51,31 +41,7 @@
 	                            <p>User Profile</p>
 	                        </a>
 	                    </li>
-	                    <!-- <li>
-	                        <a class="nav-link" href="./icons.html">
-	                            <i class="nc-icon nc-atom"></i>
-	                            <p>Icons</p>
-	                        </a>
-	                    </li>
-	                    <li>
-	                        <a class="nav-link" href="./maps.html">
-	                            <i class="nc-icon nc-pin-3"></i>
-	                            <p>Maps</p>
-	                        </a>
-	                    </li>
-	                    <li>
-	                        <a class="nav-link" href="./notifications.html">
-	                            <i class="nc-icon nc-bell-55"></i>
-	                            <p>Notifications</p>
-	                        </a>
-	                    </li>
-	                    <li class="nav-item active active-pro">
-	                        <a class="nav-link active" href="upgrade.html">
-	                            <i class="nc-icon nc-alien-33"></i>
-	                            <p>Upgrade to PRO</p>
-	                        </a>
-	                    </li> -->
-	                </ul>
+	             	   </ul>
 	            </div>
 	        </div>
 	        <div class="main-panel">
@@ -172,19 +138,24 @@
 </form>
 </div>
 
-<div class="container-take-survey">
+<div class="container-my-survey">
 <form>
-
 <div id="survey-submit-message">
 <div class="form-group">
-<div class="choose-survey">
-  <form id="surveys-index" class="border">
-    <fieldset>
-      <legend>Please choose a survey to complete</legend><i class="glyphicon glyphicon-search"></i>
-        <input type="submit" value="Search surveys">
-    </fieldset>
-  </form>
-  <div id="content">surveys listed</div>
+<div class="list-survey">
+  <div id="my-survey-content">surveys listed</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+
+<div class="profile">
+<form>
+<div id="survey-submit-message">
+<div class="form-group">
+<div class="my-profile">
+  <div id="my-profile-content">Profile Options</div>
 </div>
 </div>
 </div>
@@ -200,13 +171,6 @@
   <h4>Please answer the following questions<br> with 1 being Absolutely Not<br> and 5 being Yes, Absolutely</h4>
   <h4>Question 1</h4>
   <p>insert question here</p>
-  <!-- <div class="btn-group btn-group-lg" role="group" aria-label="survey">
-    <button type="button" class="btn btn-default">1</button>
-    <button type="button" class="btn btn-default">2</button>
-    <button type="button" class="btn btn-default">3</button>
-    <button type="button" class="btn btn-default">4</button>
-    <button type="button" class="btn btn-default">5</button>
-    </div> -->
     <form id="question1">
       <!--#sel1 -->
     <label class="radio-inline">
@@ -228,13 +192,6 @@
 
   <h4>Question 2</h4>
   <p>insert question here</p>
-  <!-- <div class="btn-group btn-group-lg" role="group" aria-label="survey">
-    <button type="button" class="btn btn-default">1</button>
-    <button type="button" class="btn btn-default">2</button>
-    <button type="button" class="btn btn-default">3</button>
-    <button type="button" class="btn btn-default">4</button>
-    <button type="button" class="btn btn-default">5</button>
-  </div> -->
   <form id="question2">
     <!--#sel2 -->
   <label class="radio-inline">
@@ -256,13 +213,6 @@
 
   <h4>Question 3</h4>
   <p>insert question here</p>
-  <!-- <div class="btn-group btn-group-lg" role="group" aria-label="survey">
-    <button type="button" class="btn btn-default">1</button>
-    <button type="button" class="btn btn-default">2</button>
-    <button type="button" class="btn btn-default">3</button>
-    <button type="button" class="btn btn-default">4</button>
-    <button type="button" class="btn btn-default">5</button>
-  </div> -->
   <form id="question3">
     <!--#sel3 -->
   <label class="radio-inline">
@@ -284,13 +234,6 @@
 
   <h4>Question 4</h4>
   <p>insert question here</p>
-  <!-- <div class="btn-group btn-group-lg" role="group" aria-label="survey">
-    <button type="button" class="btn btn-default">1</button>
-    <button type="button" class="btn btn-default">2</button>
-    <button type="button" class="btn btn-default">3</button>
-    <button type="button" class="btn btn-default">4</button>
-    <button type="button" class="btn btn-default">5</button>
-  </div> -->
   <form id="question4">
     <!--#sel4 -->
   <label class="radio-inline">
@@ -312,23 +255,13 @@
 
   <h4>Question 5</h4>
   <p>insert question here</p>
-  <!-- <div class="btn-group btn-group-lg" role="group" aria-label="survey">
-    <button type="button" class="btn btn-default">1</button>
-    <button type="button" class="btn btn-default">2</button>
-    <button type="button" class="btn btn-default">3</button>
-    <button type="button" class="btn btn-default">4</button>
-    <button type="button" class="btn btn-default">5</button>
-  </div>
-  <div><br> -->
   <form id="question5">
     <!--#sel5 -->
   <label class="radio-inline">
     <input type="radio" name="optradio1">1
   </label>
-
-
-    <label class="radio-inline">
-    <input type="radio" name="optradio2">2
+  <label class="radio-inline">
+  <input type="radio" name="optradio2">2
   </label>
   <label class="radio-inline">
     <input type="radio" name="optradio3">3
@@ -346,255 +279,33 @@
 </form>
 </div>
 </div>
-
-
-
-		            <!-- <div class="content">
-	                <div class="container-fluid">
-	                    <div class="row">
-	                        <div class="col-md-4">
-	                            <div class="card ">
-	                                <div class="card-header ">
-	                                    <h4 class="card-title">Email Statistics</h4>
-	                                    <p class="card-category">Last Campaign Performance</p>
-	                                </div>
-	                                <div class="card-body ">
-	                                    <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
-	                                </div>
-	                                <div class="card-footer ">
-	                                    <div class="legend">
-	                                        <i class="fa fa-circle text-info"></i> Open
-	                                        <i class="fa fa-circle text-danger"></i> Bounce
-	                                        <i class="fa fa-circle text-warning"></i> Unsubscribe
-	                                    </div>
-	                                    <hr>
-	                                    <div class="stats">
-	                                        <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="col-md-8">
-	                            <div class="card ">
-	                                <div class="card-header ">
-	                                    <h4 class="card-title">Users Behavior</h4>
-	                                    <p class="card-category">24 Hours performance</p>
-	                                </div>
-	                                <div class="card-body ">
-	                                    <div id="chartHours" class="ct-chart"></div>
-	                                </div>
-	                                <div class="card-footer ">
-	                                    <div class="legend">
-	                                        <i class="fa fa-circle text-info"></i> Open
-	                                        <i class="fa fa-circle text-danger"></i> Click
-	                                        <i class="fa fa-circle text-warning"></i> Click Second Time
-	                                    </div>
-	                                    <hr>
-	                                    <div class="stats">
-	                                        <i class="fa fa-history"></i> Updated 3 minutes ago
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <div class="row">
-	                        <div class="col-md-6">
-	                            <div class="card ">
-	                                <div class="card-header ">
-	                                    <h4 class="card-title">2017 Sales</h4>
-	                                    <p class="card-category">All products including Taxes</p>
-	                                </div>
-	                                <div class="card-body ">
-	                                    <div id="chartActivity" class="ct-chart"></div>
-	                                </div>
-	                                <div class="card-footer ">
-	                                    <div class="legend">
-	                                        <i class="fa fa-circle text-info"></i> Tesla Model S
-	                                        <i class="fa fa-circle text-danger"></i> BMW 5 Series
-	                                    </div>
-	                                    <hr>
-	                                    <div class="stats">
-	                                        <i class="fa fa-check"></i> Data information certified
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="col-md-6">
-	                            <div class="card  card-tasks">
-	                                <div class="card-header ">
-	                                    <h4 class="card-title">Tasks</h4>
-	                                    <p class="card-category">Backend development</p>
-	                                </div>
-	                                <div class="card-body ">
-	                                    <div class="table-full-width">
-	                                        <table class="table">
-	                                            <tbody>
-	                                                <tr>
-	                                                    <td>
-	                                                        <div class="form-check">
-	                                                            <label class="form-check-label">
-	                                                                <input class="form-check-input" type="checkbox" value="">
-	                                                                <span class="form-check-sign"></span>
-	                                                            </label>
-	                                                        </div>
-	                                                    </td>
-	                                                    <td>Sign contract for "What are conference organizers afraid of?"</td>
-	                                                    <td class="td-actions text-right">
-	                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-	                                                            <i class="fa fa-edit"></i>
-	                                                        </button>
-	                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-	                                                            <i class="fa fa-times"></i>
-	                                                        </button>
-	                                                    </td>
-	                                                </tr>
-	                                                <tr>
-	                                                    <td>
-	                                                        <div class="form-check">
-	                                                            <label class="form-check-label">
-	                                                                <input class="form-check-input" type="checkbox" value="" checked>
-	                                                                <span class="form-check-sign"></span>
-	                                                            </label>
-	                                                        </div>
-	                                                    </td>
-	                                                    <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-	                                                    <td class="td-actions text-right">
-	                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-	                                                            <i class="fa fa-edit"></i>
-	                                                        </button>
-	                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-	                                                            <i class="fa fa-times"></i>
-	                                                        </button>
-	                                                    </td>
-	                                                </tr>
-	                                                <tr>
-	                                                    <td>
-	                                                        <div class="form-check">
-	                                                            <label class="form-check-label">
-	                                                                <input class="form-check-input" type="checkbox" value="" checked>
-	                                                                <span class="form-check-sign"></span>
-	                                                            </label>
-	                                                        </div>
-	                                                    </td>
-	                                                    <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-	                                                    </td>
-	                                                    <td class="td-actions text-right">
-	                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-	                                                            <i class="fa fa-edit"></i>
-	                                                        </button>
-	                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-	                                                            <i class="fa fa-times"></i>
-	                                                        </button>
-	                                                    </td>
-	                                                </tr>
-	                                                <tr>
-	                                                    <td>
-	                                                        <div class="form-check">
-	                                                            <label class="form-check-label">
-	                                                                <input class="form-check-input" type="checkbox" checked>
-	                                                                <span class="form-check-sign"></span>
-	                                                            </label>
-	                                                        </div>
-	                                                    </td>
-	                                                    <td>Create 4 Invisible User Experiences you Never Knew About</td>
-	                                                    <td class="td-actions text-right">
-	                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-	                                                            <i class="fa fa-edit"></i>
-	                                                        </button>
-	                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-	                                                            <i class="fa fa-times"></i>
-	                                                        </button>
-	                                                    </td>
-	                                                </tr>
-	                                                <tr>
-	                                                    <td>
-	                                                        <div class="form-check">
-	                                                            <label class="form-check-label">
-	                                                                <input class="form-check-input" type="checkbox" value="">
-	                                                                <span class="form-check-sign"></span>
-	                                                            </label>
-	                                                        </div>
-	                                                    </td>
-	                                                    <td>Read "Following makes Medium better"</td>
-	                                                    <td class="td-actions text-right">
-	                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-	                                                            <i class="fa fa-edit"></i>
-	                                                        </button>
-	                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-	                                                            <i class="fa fa-times"></i>
-	                                                        </button>
-	                                                    </td>
-	                                                </tr>
-	                                                <tr>
-	                                                    <td>
-	                                                        <div class="form-check">
-	                                                            <label class="form-check-label">
-	                                                                <input class="form-check-input" type="checkbox" value="" disabled>
-	                                                                <span class="form-check-sign"></span>
-	                                                            </label>
-	                                                        </div>
-	                                                    </td>
-	                                                    <td>Unfollow 5 enemies from twitter</td>
-	                                                    <td class="td-actions text-right">
-	                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-	                                                            <i class="fa fa-edit"></i>
-	                                                        </button>
-	                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
-	                                                            <i class="fa fa-times"></i>
-	                                                        </button>
-	                                                    </td>
-	                                                </tr>
-	                                            </tbody>
-	                                        </table>
-	                                    </div>
-	                                </div>
-	                                <div class="card-footer ">
-	                                    <hr>
-	                                    <div class="stats">
-	                                        <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div> -->
-	            <footer class="footer">
-	                <div class="container">
-	                    <nav>
-	                        <ul class="footer-menu">
-	                            <li>
-	                                <a href="#">
-	                                    Home
-	                                </a>
-	                            </li>
-	                            <li>
-	                                <a href="#">
-	                                    Company
-	                                </a>
-	                            </li>
-	                            <li>
-	                                <a href="#">
-	                                    Portfolio
-	                                </a>
-	                            </li>
-	                            <li>
-	                                <a href="#">
-	                                    Blog
-	                                </a>
-	                            </li>
-	                        </ul>
-	                        <p class="copyright text-center">
-	                            ©
-	                            <script>
-	                                document.write(new Date().getFullYear())
-	                            </script>
-	                            <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
-	                        </p>
-	                    </nav>
-	                </div>
-	            </footer>
-	        </div>
-	    </div>
-    </body>
+<footer class="footer">
+	 <div class="container">
+	    <nav>
+	       <ul class="footer-menu">
+	          <li>
+	             <a href="#">Home</a>
+	          </li>
+	          <li>
+	             <a href="#">Company</a>
+	          </li>
+	          <li>
+	             <a href="#">Portfolio</a>
+	          </li>
+	          <li>
+	             <a href="#">Blog</a>
+	          </li>
+	             </ul>
+	               <p class="copyright text-center">©
+	                 <script>
+	                   document.write(new Date().getFullYear())
+	                 </script>
+	                   <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+	               </p>
+	       </nav>
+	     </div>
+	   </footer>
+	 </div>
+	 </div>
+  </body>
 </html>

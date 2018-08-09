@@ -18,11 +18,11 @@ const onCreateFailure = function(data){
 
 const onIndexSuccess = function(data){
   // empty content element
-  $('#content').html('')
+  $('#my-survey-content').html('')
   // loop through API response data
   data.surveys.forEach(survey => {
     // build HTML element with data
-    const contentHTML = (`
+    const mySurveyContentHTML = (`
       <h4>Survey Name: ${survey.survey_name}</h4>
       <p>Survey ID: ${survey.id}</p>
       <p>Question 1: ${survey.question1}</p>
@@ -31,8 +31,8 @@ const onIndexSuccess = function(data){
       <p>Question 4: ${survey.question4}</p>
       <p>Question 5: ${survey.question5}</p>
     `)
-    // append contentHTML to content
-    $('.content').append(contentHTML)
+    // append mySurveyContentHTML to content
+    $('.mySurveyContent').append(mySurveyContentHTML)
     $('#survey-submit-message').text('Survey List Ready')
     $('#survey-submit-message').css('background-color', 'green')
     $('#survey-submit-message').fadeOut(7500)

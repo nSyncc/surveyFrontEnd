@@ -2,7 +2,7 @@
 // toggle my surveys
 $(document).ready(function () {
   $('#mySurveys').click(function () {
-    $('').toggle()
+    $('.container-my-survey').toggle()
   })
 })
 
@@ -17,6 +17,6 @@ $(document).ready(function () {
 // toggle user profile
 $(document).ready(function () {
   $('#userProfile').click(function () {
-    $('').toggle()
+    $('.profile').toggle()
   })
 })
