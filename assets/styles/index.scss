@@ -10,21 +10,24 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   height: calc(100vh);
 }
 
-.setup-survey {
-  text-align: center;
-  border-radius: 10px;
-  border-style: ridge;
-  border-width: 10px;
-  border-color: grayscale;
-  padding: 25px 100px;
-  box-shadow: 10px 10px 8px #888888;
-  background-color: lightblue;
-}
-
-.setup-survey h6 {
-  text-align: left;
-  color: gray;
-}
+// main {
+//   display: none;
+// }
+// .setup-survey {
+//   text-align: center;
+//   border-radius: 10px;
+//   border-style: ridge;
+//   border-width: 10px;
+//   border-color: grayscale;
+//   padding: 25px 100px;
+//   box-shadow: 10px 10px 8px #888888;
+//   background-color: lightblue;
+// }
+//
+// .setup-survey h6 {
+//   text-align: left;
+//   color: gray;
+// }
 
 .container-my-survey {
   text-align: center;
@@ -38,6 +41,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   display: none;
 }
 
+.container-my-survey h6 {
+  text-align: left;
+  color: gray;
+}
+
 .profile {
   text-align: center;
   border-radius: 10px;
@@ -48,6 +56,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   box-shadow: 10px 10px 8px #888888;
   background-color: lightblue;
   display: none;
+}
+
+.profile h6 {
+  text-align: left;
+  color: gray;
 }
 
 .create-survey {
@@ -78,7 +91,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   display: none;
 }
 
-
+#createModal {
+  display: none;
+}
 
 .choose-survey {
   text-align: center;
