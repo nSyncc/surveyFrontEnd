@@ -1,15 +1,22 @@
 
-
-// toggle setup survey
+// toggle my surveys
 $(document).ready(function () {
-  $('#CreateSurveyInfo').click(function () {
+  $('#mySurveys').click(function () {
+    $('').toggle()
+  })
+})
+
+
+// toggle create survey
+$(document).ready(function () {
+  $('#createSurvey').click(function () {
     $('.container-survey').toggle()
   })
 })
 
-// toggle setup survey
+// toggle user profile
 $(document).ready(function () {
-  $('#SearchSurveyInfo').click(function () {
-    $('.container-form').toggle()
+  $('#userProfile').click(function () {
+    $('').toggle()
   })
 })

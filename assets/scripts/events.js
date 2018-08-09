@@ -79,6 +79,11 @@ const onSubmitResponse = function (event) {
     }
 }
 
+const addHandlers = () => {
+  $('#create-survey').on('submit', events.onCreateSurvey)
+  $('#survey-response').on('submit', events.onSubmitResponse)
+}
+
 module.exports = {
   onCreateSurvey,
   onSurveyIndex,

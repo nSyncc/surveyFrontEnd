@@ -6,9 +6,8 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 require('./toggle.js')
-
+const addHandlers = require('./events.js')
 $(() => {
   // your JS code goes here
-   $('#create-survey').on('submit', events.onCreateSurvey)
-   $('#survey-response').on('submit', events.onSubmitResponse)
+   addHandlers
 })

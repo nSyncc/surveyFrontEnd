@@ -55,9 +55,9 @@ const submitResponse = function (data) {
   return $.ajax({
     url: config.apiUrl + '/response/' + data.response.response_id,
     method: 'PATCH',
-      },
+  }),
       data
-    })
+    }
 
 
   module.exports = {
