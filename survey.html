@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Surveys</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="main-panel" style="width: 100%;">
+      <nav class="navbar navbar-default navbar-fixed">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <i class="fa fa-bars" aria-hidden="true"></i> Complete this survey</a>
+          </div>
+        </div>
+      </nav>
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3"></div>
+              <div class="col-md-6">
+                  <div class="card">
+                    <div class="header">
+                      <h4 class="title font-20">
+                        <i class="fa fa-file-powerpoint-o text-danger" aria-hidden="true"></i>&nbsp;<span id="survey-name"></span></h4>
+                    </div>
+                    <div class="content">
+                        <form id="survey-responses" class="form-signup">
+                            <h5>Please complete the questions for this survey</h5>
+                            <br />
+                          
+                            <label class="label-form" style="color:#555">Name</label>
+                            <input id="txt-name" type="text" class="form-control" placeholder="Digit your name please" />
+                            <label id="question-one" class="label-form" style="color:#555"></label>
+                            <select id="response-one" class="form-control">
+                              <option value="0">Select your response</option>
+                              <option value="Very effective">Very effective</option>
+                              <option value="Effective">Effective</option>
+                              <option value="Average">Average</option>
+                              <option value="Poor">Poor</option>
+                              <option value="Bad">Bad</option>
+                            </select>
+                            <label id="question-two" class="label-form" style="color:#555"></label>
+                            <select id="response-two" class="form-control">
+                              <option value="0">Select your response</option>
+                              <option value="Very effective">Very effective</option>
+                              <option value="Effective">Effective</option>
+                              <option value="Average">Average</option>
+                              <option value="Poor">Poor</option>
+                              <option value="Bad">Bad</option>
+                            </select>
+                            <label id="question-three" class="label-form" style="color:#555"></label>
+                            <select id="response-three" class="form-control">
+                              <option value="0">Select your response</option>
+                              <option value="Very effective">Very effective</option>
+                              <option value="Effective">Effective</option>
+                              <option value="Average">Average</option>
+                              <option value="Poor">Poor</option>
+                              <option value="Bad">Bad</option>
+                            </select>
+                            <label id="question-four" class="label-form" style="color:#555"></label>
+                            <select id="response-four" class="form-control">
+                              <option value="0">Select your response</option>
+                              <option value="Very effective">Very effective</option>
+                              <option value="Effective">Effective</option>
+                              <option value="Average">Average</option>
+                              <option value="Poor">Poor</option>
+                              <option value="Bad">Bad</option>
+                            </select>
+                            <label id="question-five" class="label-form" style="color:#555"></label>
+                            <select id="response-five" class="form-control">
+                              <option value="0">Select your response</option>
+                              <option value="Very effective">Very effective</option>
+                              <option value="Effective">Effective</option>
+                              <option value="Average">Average</option>
+                              <option value="Poor">Poor</option>
+                              <option value="Bad">Bad</option>
+                            </select>
+                            <br />
+                            <br />
+                            <button class="btn btn-danger btn-fill pull-right" type="submit"><i class="fa fa-check"></i> Accept</button>
+                            <br>
+                            <br>
+                      <hr>
+                      <div class="stats">
+                        <i class="fa fa-circle-o"></i> Survey
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- message modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">
+            <i class="fa fa-ravelry text-danger" aria-hidden="true"></i>&nbsp; Project-Tracker</h4>
+        </div>
+        <div class="modal-body">
+          <span class="font-16" id="modal-message"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-fill" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / progress modal -->
+  <div class="modal fade" id="modal-progress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm-progress" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <span>
+            <i class="fa fa-spinner fa-spin"></i>&nbsp; Loading please wait</span>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ./ preogress modal -->
+  <!-- End Modals -->
+</body>
+</html>
