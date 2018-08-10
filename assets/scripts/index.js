@@ -4,8 +4,8 @@
 // const example = require('./example')
 
 // use require without a reference to ensure a file is bundled
-// require('./example')
+require('./events.js')
 
 $(() => {
-  // your JS code goes here
+  addHandlers()
 })

@@ -13,5 +13,31 @@
     </head>
     <body>
       <h1>Browser Template</h1>
+      <form id="signUp">
+        <fieldset>
+          <legend>Sign up!</legend>
+          <input type="text" name="credentials[email]" value="" placeholder="email">
+          <input type="password" name="credentials[password]" value="" placeholder="password">
+          <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
+          <input type="submit" name="submit" value="Sign up!">
+        </fieldset> 
+        </form>
+        <form id="signIn">
+        <fieldset>
+          <legend>Sign in!</legend>
+          <input type="text" name="credentials[email]" value="" placeholder="email">
+          <input type="password" name="credentials[password]" value="" placeholder="password">
+          <input type="submit" name="submit" value="Sign in!">
+        </fieldset>
+        </form>
+        <br>
+      <form id="change-email">
+        <fieldset>
+          <legend>Change Email</legend>
+          <input type="email" name="email[old]" value="" placeholder="Old email">
+          <input type="email" name="email[new]" value="" placeholder="New email">
+          <input type="submit" name="submit" value="Change email">
+        </fieldset>
+      </form>
     </body>
 </html>
