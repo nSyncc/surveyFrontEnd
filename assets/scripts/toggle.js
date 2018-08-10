@@ -1,7 +1,7 @@
 
-// toggle main page
+//toggle main page
 // $(document).ready(function () {
-//   $('.signupbtn').click(function () {
+//   $('#signinbtn').click(function () {
 //     $('#main-page').toggle()
 //   })
 // })
