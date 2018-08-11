@@ -87,18 +87,7 @@ const createEmail = function(data) {
   })
 }
 
-const getSurveyQuestions = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.getItemsUsers(data)
-  .done((data) => {
-    $.each(data.surveyQuestions, (index, element) => {
-console.log(data.items_users[index])
-      $('#table-projects > tbody').append('<tr><td>' + element.id + '</td><td>' + element.item.name + '</td><td>' + element.item.part + '</td><td>' + element.item.price + '</td></tr>') ;
-     });
-  })
-  .fail(ui.fail)
-}
+
 
 module.exports = {
   changeEmail
