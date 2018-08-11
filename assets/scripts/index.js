@@ -13,3 +13,4 @@ $(() => {
   // your JS code goes here
    handlers.addHandlers();
    authHandlers.addHandlers();
+}
