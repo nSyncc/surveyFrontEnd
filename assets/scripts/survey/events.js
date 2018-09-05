@@ -28,8 +28,8 @@ const createNewSurvey = (event) => {
   }
 
   $('#create-survey-form').hide(); $('#create-survey-questions').fadeIn(); $('#txt-question-one').focus();
- 
 
+  console.log(data)
   api.createSurvey(data)
     .then((result) => {
       _survey_id = result.survey._id;
@@ -62,10 +62,10 @@ const createQuestions = (event) => {
   api.createQuestions(data)
     .then((result) => {
       showUserSurveys();
-      
+
     })
     .catch((error) => {
-      
+
     });
 
 }
@@ -150,35 +150,39 @@ const showDetail = () => {
 
      });
 }
-window.onload = function(){
+// window.onload = function(){
 
-  let surveyId = getUrlVars()["sid"]
-  if(surveyId !==  undefined) {
- 
+//   let surveyId = getUrlVars()["sid"]
+//   if(surveyId !==  undefined) {
 
-      api.getSurveyQuestions(surveyId)
-        .then((result) => {
-          console.log(result)
+//     console.log(surveyId)
 
-          if(result.questions.length > 0) {
+//       api.getSurveyQuestions(surveyId)
+//         .then((result) => {
+//           console.log(result)
 
-              $('#question-one').text(result.questions[0].questionOne);
-              $('#question-two').text(result.questions[0].questionTwo);
-              $('#question-three').text(result.questions[0].questionThree);
-              $('#question-four').text(result.questions[0].questionFour);
-              $('#question-five').text(result.questions[0].questionFive);
+//           if(result.questions.length > 0) {
 
-          } else {
+//               $('#question-one').text(result.questions[0].questionOne);
+//               $('#question-two').text(result.questions[0].questionTwo);
+//               $('#question-three').text(result.questions[0].questionThree);
+//               $('#question-four').text(result.questions[0].questionFour);
+//               $('#question-five').text(result.questions[0].questionFive);
 
-          }
+//           } else {
 
-        })
-        .catch((error) => {
+//           }
 
-        });
-  }
+//         })
+//         .catch((error) => {
 
-}
+//         });
+//   }
+//   else {
+//     console.log('No Id')
+//   }
+
+// }
 const getUrlVars = () => {
   var vars = [], hash;
   var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -204,7 +208,7 @@ const saveResponse = (event) => {
     }
   }
 
- 
+
 
   api.createResponses(data)
     .then((result) => {
@@ -217,15 +221,15 @@ const saveResponse = (event) => {
 
 }
 const addHandlers = () => {
-  //modals handlers 
+  //modals handlers
   $('#show-modal-create-survey').on('click', showModalCreateSurvey);
   $('#create-survey-form').on('submit', createNewSurvey);
   $('#create-survey-questions').on('submit', createQuestions);
   $('#show-detail').on('click', showDetail);
   $('#survey-responses').on('submit', saveResponse);
   $('#mySurveys').on('click', showSurveys);
- 
-  
+
+
 }
 
 module.exports = {

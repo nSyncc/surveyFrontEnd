@@ -9,7 +9,24 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   width: 100%;
   height: calc(100vh);
 }
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
 
+.bg-dark {
+  background-color: #343a40!important;
+}
+.manage {
+  background: url(../img/head-bg.jpg),rgb(68, 67, 67);
+  height: calc(100vh);
+}
+.bg-white {
+  background-color: #fff;
+}
 // main {
 //   display: none;
 // }

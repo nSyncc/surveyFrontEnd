@@ -26,9 +26,11 @@ const onSignIn = function (event) {
       survey.showUserSurveys();
 
       $('#div-account').hide(); $('#dashboard').fadeIn();
-      
+
     })
-    .catch(ui.signInFailure)
+    .catch((error) => {
+      ui.signInFailure(error)
+    })
 }
 const onSignOut = function () {
 
