@@ -1,4 +1,5 @@
 const api = require('./api')
+const ui = require('../ui/ui')
 let _survey_id = null;
 
 const showSurveys = () => {
@@ -61,13 +62,18 @@ const createQuestions = (event) => {
 
   api.createQuestions(data)
     .then((result) => {
+      ui.showModalMessage('success');
       showUserSurveys();
-
+      clearFields();
     })
     .catch((error) => {
-
+       ui.showModalMessage('error', error);
     });
 
+}
+const cancelCompleteSurvey = () => {
+  $('#div-dashboard-container').fadeIn();
+  $('#div-responses').hide();
 }
 const showUserSurveys = () => {
 
@@ -77,19 +83,50 @@ const showUserSurveys = () => {
        if(data.surveys.length > 0) {
 
         $('#table-surveys > tbody').empty();
-        $('#show-div-surveys').fadeIn();
+        $('#div-main').fadeIn();
 
           $.each(data.surveys, (index, element) => {
 
-            $('#table-surveys > tbody').append('<tr><td>' + element._id + '</td><td><span class="text-info">' + element.name + '</span></td><td><a href=' + element.link + ' target="_blank"' + '>Send link</a></td><td><span class="text-info">' + element.status + '</span></td><td><button id="btn-select-project' + index + '" type="button" class="btn btn-danger btn-fill btn-xs pull-right"><i class="fa fa-clone"></i>Show details</button></td></tr>');
+            $('#table-surveys > tbody').append('<tr><td>' + element._id + '</td><td><span class="text-info">' + element.name + '</span></td><td><a id="btn-complete-survey' + index + '" style="cursor: pointer">Complete survey</a></td><td><span class="text-info">' + element.status + '</span></td><td><button id="btn-select-project' + index + '" type="button" class="btn btn-danger btn-fill btn-xs pull-right"><i class="fa fa-clone"></i>Show details</button></td></tr>');
 
               $('#btn-select-project' + index).click(function (e) {
                   e.preventDefault();
-                  $('#div-main,#show-div-stories').hide(); $('#div-details-survey').fadeIn();
-                  $('#span-survey-name').html('<i class="fa fa-file-powerpoint-o icon-project" aria-hidden="true"></i>&nbsp; ' + element.name);
+                  $('#div-main').hide();
+                  $('#div-details-survey').fadeIn();
+                  $('#span-survey-name').html('<i class="fa fa-file-pdf-o icon-project" aria-hidden="true"></i>&nbsp; ' + element.name);
 
                   _survey_id = element._id;
               });
+
+              $('#btn-complete-survey' + index).click(function (e) {
+                e.preventDefault();
+                $('#div-dashboard-container').hide();
+                $('#div-responses').fadeIn();
+                $('#survey-name').html(element.name);
+
+                      api.getSurveyQuestions(element._id)
+                      .then((result) => {
+                        console.log(result)
+
+                        if(result.questions.length > 0) {
+                            _survey_id = element._id;
+                            $('#question-one').text(result.questions[0].questionOne);
+                            $('#question-two').text(result.questions[0].questionTwo);
+                            $('#question-three').text(result.questions[0].questionThree);
+                            $('#question-four').text(result.questions[0].questionFour);
+                            $('#question-five').text(result.questions[0].questionFive);
+
+                        } else {
+
+                        }
+
+                      })
+                      .catch((error) => {
+
+                      });
+
+                //alert(element.link);
+            });
          });
 
        } else {
@@ -128,7 +165,7 @@ const showDetail = () => {
 
                   $.each(result.responses, (index, element) => {
                     console.log(element.name)
-                    $('#table-survey-responses > tbody').append('<tr><td><span class="text-danger">' + element.name + '</span></td><td>' + element.responseOne + '</td><td>' + element.responseTwo + '</td><td>' + element.responseThree + '</td><td>' + element.responseFour + '</td><td>' + element.responseFive + '</td><td>' + element.createdAt + '</td></tr>');
+                    $('#table-survey-responses > tbody').append('<tr><td><span class="text-danger">' + element.name + '</span></td><td style="text-align:center"> ' + element.responseOne + '</td><td style="text-align:center">' + element.responseTwo + '</td><td style="text-align:center">' + element.responseThree + '</td><td style="text-align:center">' + element.responseFour + '</td><td style="text-align:center">' + element.responseFive + '</td><td>' + element.createdAt + '</td></tr>');
 
                   });
 
@@ -204,21 +241,25 @@ const saveResponse = (event) => {
       "responseThree": $('#response-three').val(),
       "responseFour": $('#response-four').val(),
       "responseFive": $('#response-five').val(),
-      "survey_id": getUrlVars()["sid"]
+      "survey_id": _survey_id
     }
   }
 
-
-
   api.createResponses(data)
     .then((result) => {
-
+      $('#div-dashboard-container').fadeIn();
+      $('#div-responses').hide();
+      ui.showModalMessage('success');
     })
     .catch((error) => {
-
+      ui.showModalMessage('error', error);
     });
 
-
+}
+/* clear fields */
+const clearFields = () => {
+  $('.form-control').val('');
+  $('#create-survey-form').fadeIn(); $('#create-survey-questions').hide();
 }
 const addHandlers = () => {
   //modals handlers
@@ -228,7 +269,7 @@ const addHandlers = () => {
   $('#show-detail').on('click', showDetail);
   $('#survey-responses').on('submit', saveResponse);
   $('#mySurveys').on('click', showSurveys);
-
+  $('#btn-cancel-survey').on('click', cancelCompleteSurvey);
 
 }
 
