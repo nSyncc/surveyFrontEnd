@@ -11,8 +11,11 @@ const onSignUp = function (event) {
 
   const data = getFormFields(event.target)
   api.signUp(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.signUpFailure)
+    .then(() => {
+      ui.showModalMessage('success'); clearFields();
+    })
+    .catch(ui.showModalMessage('error'))
+
 }
 const onSignIn = function (event) {
   event.preventDefault()
@@ -20,17 +23,18 @@ const onSignIn = function (event) {
   const data = getFormFields(this)
   api.signIn(data)
     .then((result) => {
-      ui.signInSuccess()
-
+      ui.showModalMessage('success');
+      $('#user').text('Welcome ' + result.user.name)
       store.user = result.user
       survey.showUserSurveys();
 
       $('#div-account').hide(); $('#dashboard').fadeIn();
-
+      clearFields();
     })
     .catch((error) => {
-      ui.signInFailure(error)
+      ui.showModalMessage('error', error);
     })
+
 }
 const onSignOut = function () {
 
@@ -41,6 +45,10 @@ const onSignOut = function () {
       store.user = null
     })
     .catch(ui.signOutFailure)
+}
+/* clear fields */
+const clearFields = () => {
+  $('.form-control').val('');
 }
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
