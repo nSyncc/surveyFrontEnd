@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Survey Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <div class="col-md-12" style="background-color: green">
+    <span id="message" style=" color:#fff"></span>
+  </div>
+  <div id="div-account" class="container manage">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>&nbsp; Surveys</a>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+        </div>
+      </div>
+    </nav>
+    <div class="col-md-2"></div>
+    <div class="col-md-4 top-120 bg-white" style="height: 440px;">
+      <br />
+      <h4 style="margin-left: 80px">Please sign in</h4>
+      <br />
+      <br />
+      <form id="sign-in" class="form-horizontal">
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Remember me
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-danger btn-fill">Sign in</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-4 top-120 bg-white" style="margin-left: 20px;height: 440px;">
+      <br />
+      <h4 style="margin-left: 80px">Please sign up</h4>
+      <br /><br />
+      <form id="sign-up" class="form-horizontal form-signup">
+        <input type="hidden" name="credentials[role]" value="Administrator">
+        <input type="hidden" name="credentials[photo]" value="photo">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="credentials[name]" placeholder="Name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" name="credentials[email]" required placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" name="credentials[password]" required placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Confirm password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Password confirmation">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-danger btn-fill">Sign up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="dashboard" class="wrapper" style="display: none">
+    <div id="div-dashboard-container">
+      <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
+        <div class="sidebar-wrapper">
+          <br />
+          <div class="logo"><h5><i class="fa fa-file-pdf-o" aria-hidden="true"></i>&nbsp; Survey Tracker</h5></div>
+          <br />
+          <ul class="nav">
+
+            <li class="active">
+              <a href="#" class="nav-link" id="mySurveys">
+                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                <p>My Surveys</p>
+              </a>
+            </li>
+            <li id="show-modal-create-survey">
+              <a class="nav-link" href="#">
+                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                <p>Create Survey</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main-panel">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+          <div class=" container-fluid  ">
+            <a class="navbar-brand" href="#pablo"> Dashboard </a>
+
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <a href="#" id="user">
+                  </a>
+                </li>
+                <li>
+                  <a href="#" id="sign-out">
+                    <i class="fa fa-sign-out"></i> Log out
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div id="div-main">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="header">
+                      <h4 class="title font-20">
+                        <i class="fa fa-file-pdf-o" aria-hidden="true"></i>&nbsp; My surveys</h4>
+                    </div>
+                    <div class="content">
+
+                      <table id="table-surveys" class="table table-hover">
+                        <thead>
+                          <tr>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Link</td>
+                            <td>Status</td>
+                            <td></td>
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                      </table>
+                      <hr>
+                      <div class="stats">
+                        <i class="fa fa-circle-o"></i> Surveys
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- details survay -->
+              <div id="div-details-survey" style="display: none">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="header">
+                      <h4 class="title font-20" style="margin-left: -17px" id="span-survey-name"></h4>
+                      <div style="margin-top: -20px" class="pull-right">
+                        <span id="show-detail" style="cursor: pointer">
+                          <i class="fa fa-sticky-note-o text-danger" aria-hidden="true"></i>&nbsp;Show details</td>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="content">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="div-detail" style="display: none">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="header">
+                      <h4 class="title font-20">
+                        <i class="fa fa-sticky-note-o text-danger" aria-hidden="true"></i>&nbsp; Survey questions</h4>
+                    </div>
+                    <div class="content">
+                      <ol id="ul-survey-questions"></ol>
+                      <hr>
+                      <div class="stats">
+                        <i class="fa fa-circle-o"></i> Questions
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="header">
+                      <h4 class="title font-20">
+                        <i class="fa fa-sticky-note-o text-danger" aria-hidden="true"></i>&nbsp; Survey responses</h4>
+                    </div>
+                    <div class="content">
+                      <table id="table-survey-responses" class="table table-hover">
+                        <thead>
+                          <tr>
+                            <td>Name</td>
+                            <td>Response question one</td>
+                            <td>Response question two</td>
+                            <td>Response question three</td>
+                            <td>Response question four</td>
+                            <td>Response question five</td>
+                            <td>Creation date</td>
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                      </table>
+                      <hr>
+                      <div class="stats">
+                        <i class="fa fa-circle-o"></i> Responses
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+    <div id="div-responses" style="display: none">
+      <div class="main-panel" style="width: 100%;">
+        <nav class="navbar navbar-default navbar-fixed">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">
+                <i class="fa fa-bars" aria-hidden="true"></i> Complete this survey</a>
+            </div>
+          </div>
+        </nav>
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="header">
+                    <h4 class="title font-20">
+                      <i class="fa fa-file-powerpoint-o text-danger" aria-hidden="true"></i>&nbsp;<span>Survey</span></h4>
+                  </div>
+                  <div class="content">
+                    <form id="survey-responses" class="form-signup">
+                                <h5>Please complete the questions for this survey</h5>
+                                <br />
+                                <h3 class="label label-danger" style="font-size: 14px" id="survey-name"></h3>
+                                <br /><br />
+                                <label class="label-form" style="color:#555">Name</label>
+                                <input id="txt-name" type="text" class="form-control" placeholder="Digit your name please" />
+                                <br />
+                                <label id="question-one" class="label-form" style="color:#555"></label>
+                                <select id="response-one" class="form-control">
+                                  <option value="0">Select your response</option>
+                                  <option value="Very effective">Very effective</option>
+                                  <option value="Effective">Effective</option>
+                                  <option value="Average">Average</option>
+                                  <option value="Poor">Poor</option>
+                                  <option value="Bad">Bad</option>
+                                </select>
+                                <br />
+                                <label id="question-two" class="label-form" style="color:#555"></label>
+                                <select id="response-two" class="form-control">
+                                  <option value="0">Select your response</option>
+                                  <option value="Very effective">Very effective</option>
+                                  <option value="Effective">Effective</option>
+                                  <option value="Average">Average</option>
+                                  <option value="Poor">Poor</option>
+                                  <option value="Bad">Bad</option>
+                                </select>
+                                <br />
+                                <label id="question-three" class="label-form" style="color:#555"></label>
+                                <select id="response-three" class="form-control">
+                                  <option value="0">Select your response</option>
+                                  <option value="Very effective">Very effective</option>
+                                  <option value="Effective">Effective</option>
+                                  <option value="Average">Average</option>
+                                  <option value="Poor">Poor</option>
+                                  <option value="Bad">Bad</option>
+                                </select>
+                                <br />
+                                <label id="question-four" class="label-form" style="color:#555"></label>
+                                <select id="response-four" class="form-control">
+                                  <option value="0">Select your response</option>
+                                  <option value="Very effective">Very effective</option>
+                                  <option value="Effective">Effective</option>
+                                  <option value="Average">Average</option>
+                                  <option value="Poor">Poor</option>
+                                  <option value="Bad">Bad</option>
+                                </select>
+                                <br />
+                                <label id="question-five" class="label-form" style="color:#555"></label>
+                                <select id="response-five" class="form-control">
+                                  <option value="0">Select your response</option>
+                                  <option value="Very effective">Very effective</option>
+                                  <option value="Effective">Effective</option>
+                                  <option value="Average">Average</option>
+                                  <option value="Poor">Poor</option>
+                                  <option value="Bad">Bad</option>
+                                </select>
+                                <br />
+                                <br />
+                                <button id="btn-cancel-survey" class="btn btn-default btn-simple pull-right" type="button" ><i class="fa fa-close"></i> Cancel</button><button class="btn btn-danger btn-fill pull-right" type="submit"><i class="fa fa-check"></i> Accept</button>
+                                <br>
+                                <br>
+                          </form>
+                    <hr>
+                    <div class="stats">
+                      <i class="fa fa-circle-o"></i> Survey
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!-- message modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">
+            <i class="fa fa-ravelry text-danger" aria-hidden="true"></i>&nbsp; Survey-Tracker</h4>
+        </div>
+        <div class="modal-body">
+          <span class="font-16" id="modal-message-one"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-fill" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- create project modal -->
+  <div class="modal fade" id="modal-create-survey" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title font-20" id="myModalLabel">
+            <i class="fa fa-ravelry text-danger" aria-hidden="true"></i>&nbsp; Create survey</h4>
+        </div>
+        <div class="modal-body">
+          <form id="create-survey-form" class="form-signup">
+            <label class="label-form">Survey name</label>
+            <input id="txt-name-survey" type="text" maxlength="30" class="form-control" placeholder="Survey name">
+            <br />
+            <br />
+            <button class="btn btn-danger btn-fill pull-right" type="submit">Next
+              <i class="fa fa-arrow-right"></i>
+            </button>
+            <!-- <button data-dismiss="modal" class="btn btn-default btn-simple" type="button">Cancel</button> -->
+            <br />
+            <br />
+            <br />
+          </form>
+          <form id="create-survey-questions" class="form-signup" style="display: none">
+            <h5>Questions for this survey</h5>
+            <label class="label-form">Question one</label>
+            <input id="txt-question-one" type="text" class="form-control" placeholder="Question one">
+            <label class="label-form">Question two</label>
+            <input id="txt-question-two" type="text" class="form-control" placeholder="Question two">
+            <label class="label-form">Question three</label>
+            <input id="txt-question-three" type="text" class="form-control" placeholder="Question three">
+            <label class="label-form">Question four</label>
+            <input id="txt-question-four" type="text" class="form-control" placeholder="Question four">
+            <label class="label-form">Question five</label>
+            <input id="txt-question-five" type="text" class="form-control" placeholder="Question five">
+            <br />
+            <br />
+            <button class="btn btn-danger btn-fill pull-right" type="submit">
+              <i class="fa fa-check"></i> Accept</button>
+            <!-- <button data-dismiss="modal" class="btn btn-default btn-simple" type="button">Cancel</button> -->
+            <br />
+            <br />
+            <br />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
